@@ -1,4 +1,3 @@
-import React from 'react'
 import BigCardImage from '../assets/about-big-card-image.png'
 import Filter from '../assets/filter.png'
 import SmallCardImage from '../assets/about-small-card-image.png'

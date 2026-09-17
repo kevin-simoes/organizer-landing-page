@@ -1,6 +1,6 @@
-import React from 'react'
+
 import HeroImage from '../assets/hero_image.png'
-import { ArrowBigRightDashIcon, ArrowRight, CircleUser, Home } from 'lucide-react'
+import { ArrowRight } from 'lucide-react'
 
 const Hero = () => {
     return (

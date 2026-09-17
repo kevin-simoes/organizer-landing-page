@@ -1,7 +1,5 @@
 import Icon from '../assets/organizer_icon.png'
 
-import React from 'react'
-
 const NavBar = () => {
     return (
         <>
