@@ -5,7 +5,8 @@ import { ArrowRight } from 'lucide-react'
 const Hero = () => {
     return (
         <>
-            <section className='flex px-15'>
+            <section className='flex px-15 flex-col-reverse items-center text-center md:flex-row md:text-left gap-10 max-w-9xl mx-auto py-10' id='hero-section
+'>
                 <div className='flex flex-col justify-center gap-2'>
                     <h1>Suas anotações <span className='text-(--primary-color)'>Organizadas</span> com um clique!</h1>
                     <p>Capture fotos de lousas, folhas de caderno e anotações. Organizamos tudo automaticamente e encontra o
@@ -16,7 +17,8 @@ const Hero = () => {
                     </a>
                 </div>
                 <div class="hero-rightside">
-                    <img src={HeroImage} width="1020" />
+                    <img src={HeroImage} width="1020"
+                    className='w-100 md:w-200 ' />
                 </div>
             </section>
         </>

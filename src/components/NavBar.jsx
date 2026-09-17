@@ -3,13 +3,13 @@ import Icon from '../assets/organizer_icon.png'
 const NavBar = () => {
     return (
         <>
-            <header className='flex gap-2 items-center justify-between p-2'>
+            <header className='flex gap-2 md:flex-row items-center justify-between p-2 flex-wrap'>
 
                 <div className='flex items-center flex-row'>
                     <img src={Icon} width="50" />
                     <h3>Organizer</h3>
                 </div>
-                <nav aria-label="Navegação principal" className='flex gap-10'>
+                <nav aria-label="Navegação principal" className='flex gap-10 flex-wrap'>
                     <a href="#about">A Solução</a>
                     <a href="#target-audience">Público-Alvo</a>
                     <a href="#benefits">Benefícios</a>
