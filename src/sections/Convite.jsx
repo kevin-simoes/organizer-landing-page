@@ -1,4 +1,5 @@
 import Icon from '../assets/organizer_icon.png'
+import { Link } from "react-router-dom";
 
 const Convite = () => {
   return (
@@ -20,12 +21,8 @@ const Convite = () => {
               Faça o login na landing page do Organizer para ser informado quando o aplicativo
               ficar disponível.
             </p>
-            <a
-              href="src/pages/form.html"
-              className="mt-2 inline-block bg-white text-(--primary-color) font-semibold px-8 py-3 rounded-full hover:opacity-90 transition"
-            >
-              Registrar
-            </a>
+            <Link to="/formulario" className="mt-2 inline-block bg-white text-(--primary-color) font-semibold px-8 py-3 rounded-full hover:opacity-90 transition">Registrar</Link>
+
           </div>
         </section> 
     </>
