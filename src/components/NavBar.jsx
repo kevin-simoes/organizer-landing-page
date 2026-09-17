@@ -20,9 +20,12 @@ const NavBar = () => {
                 <a href="#contact">Contato</a>
             </nav>
 
-            <div>
+            <div className='flex gap-10'>
                 <Link to="/formulario">
                     Formulário
+                </Link>
+                <Link to="/login">
+                    Login
                 </Link>
             </div>
 
