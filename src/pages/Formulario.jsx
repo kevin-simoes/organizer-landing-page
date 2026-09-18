@@ -148,10 +148,10 @@ export default function RegistrarFormulario() {
             <option value="" disabled>
               Selecione
             </option>
-            <option value="student">Estudante</option>
-            <option value="teacher">Professor</option>
-            <option value="worker">Profissional</option>
-            <option value="general">Usuário Geral</option>
+            <option value="estudante">Estudante</option>
+            <option value="professor">Professor</option>
+            <option value="profissional">Profissional</option>
+            <option value="usuario geral">Usuário Geral</option>
           </select>
 
           <label htmlFor="discovery" className="block text-left font-semibold">
