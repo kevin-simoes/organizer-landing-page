@@ -28,7 +28,7 @@ const Dashboard = () => {
         </button>
         </span>
         <hr className="border-0.5 border-gray-300"></hr>
-        <div className="flex gap-2">
+        <div className="flex gap-2 overflow-auto">
           <span>
             Total de estudantes:{" "}
             <b>{registros.filter((registro) => registro.profile === "student").length}</b>
@@ -53,32 +53,34 @@ const Dashboard = () => {
             <b>Total de registros: {registros.length}</b>
           </span>
         </div>
-        <table className="w-full border-collapse border border-gray-300">
-          <thead>
-            <tr className="border border-gray-300">
-              <th className="border border-gray-300">Nome e Sobrenome</th>
-              <th className="border border-gray-300">Email</th>
-              <th className="border border-gray-300">Você é</th>
-              <th className="border border-gray-300">
-                Como conheceu a Organizer
-              </th>
-              <th className="border border-gray-300">
-                O que mais te empolga no aplicativo
-              </th>
-            </tr>
-          </thead>
-          <tbody>
-            {registros.map((registro) => (
-              <tr key={registro.id} className="text-center">
-                <td className="border border-gray-300">{registro.username}</td>
-                <td className="border border-gray-300">{registro.email}</td>
-                <td className="border border-gray-300">{registro.profile}</td>
-                <td className="border border-gray-300">{registro.discovery}</td>
-                <td className="border border-gray-300">{registro.excited}</td>
+        <div className="w-full overflow-x-auto">
+          <table className="w-full border-collapse border border-gray-300">
+            <thead>
+              <tr className="border border-gray-300">
+                <th className="border border-gray-300">Nome e Sobrenome</th>
+                <th className="border border-gray-300">Email</th>
+                <th className="border border-gray-300">Você é</th>
+                <th className="border border-gray-300">
+                  Como conheceu a Organizer
+                </th>
+                <th className="border border-gray-300">
+                  O que mais te empolga no aplicativo
+                </th>
               </tr>
-            ))}
-          </tbody>
-        </table>
+            </thead>
+            <tbody>
+              {registros.map((registro) => (
+                <tr key={registro.id} className="text-center">
+                  <td className="border border-gray-300">{registro.username}</td>
+                  <td className="border border-gray-300">{registro.email}</td>
+                  <td className="border border-gray-300">{registro.profile}</td>
+                  <td className="border border-gray-300">{registro.discovery}</td>
+                  <td className="border border-gray-300">{registro.excited}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
       </div>
     </>
   );

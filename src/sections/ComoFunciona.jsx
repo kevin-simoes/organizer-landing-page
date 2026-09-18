@@ -23,11 +23,11 @@ const ComoFunciona = () => {
               </p>
             </div>
 
-            <div className="rounded-2xl border border-(--card-border-color1) bg-(--card-color1) px-8 pt-8 flex gap-4 items-top text-end">
+            <div className="rounded-2xl border border-(--card-border-color1) bg-(--card-color1) px-8 pt-8 flex gap-4 items-top text-end items:start md:flex-row flex-col-reverse items-center">
               <img
                 src={TutorialImage}
                 style={{height: '300px'}}
-                className=""
+                className="w-fit"
               />
             <div className="flex flex-col gap-4 items-end text-end">
               <Folder className="text-(--primary-color)" width="35" height="35"/>

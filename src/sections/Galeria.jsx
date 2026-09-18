@@ -6,7 +6,7 @@ const Galeria = () => {
   return (
     <>
       <section
-          className="flex flex-col gap-2 py-10 items-center max-w-6xl mx-auto w-full"
+          className="flex flex-col gap-2 py-10 items-center max-w-6xl mx-auto w-full text-center sm:text-left"
           id="gallery"
         >
           <h2 className="text-3xl md:text-4xl font-bold">

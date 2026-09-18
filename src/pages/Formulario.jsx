@@ -92,7 +92,7 @@ export default function RegistrarFormulario() {
           <h3 className="text-lg font-semibold text-white">Organizer</h3>
         </span>
         <span>
-          <Link to="/">Home</Link>
+        <Link to="/" className="text-white">Home</Link>
         </span>
       </header>
 

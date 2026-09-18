@@ -1,5 +1,5 @@
 import organizerIcon from "../assets/organizer_icon.png";
-import { Link, useNavigate } from "react-router-dom";
+import { Link,  } from "react-router-dom";
 import { useState } from "react";
 import { useAuth } from "../hooks/useAuth";
 
@@ -7,8 +7,6 @@ export default function Login() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [message, setMessage] = useState("");
-
-  const navigate = useNavigate();
   // Definindo a função de login do hook personalizado (useAuth)
   const { login } = useAuth();
 
@@ -65,7 +63,7 @@ export default function Login() {
         </span>
 
         <span>
-          <Link to="/">Home</Link>
+          <Link to="/" className="text-white">Home</Link>
         </span>
       </header>
 

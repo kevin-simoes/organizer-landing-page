@@ -2,7 +2,7 @@ const PublicoAlvo = () => {
   return (
     <>
     <section
-          className=" flex flex-col gap-2 items-center max-w-6xl mx-auto w-full"
+          className=" flex flex-col gap-2 items-center max-w-6xl mx-auto w-full text-center"
           id="target-audience"
         >
           <h2 className="text-3xl md:text-4xl font-bold">
