@@ -31,19 +31,19 @@ const Dashboard = () => {
         <div className="flex gap-2 overflow-auto">
           <span>
             Total de estudantes:{" "}
-            <b>{registros.filter((registro) => registro.profile === "student").length}</b>
+            <b>{registros.filter((registro) => registro.profile === "estudante").length}</b>
           </span>
           <span>
             Total de professores:{" "}
-            <b>{registros.filter((registro) => registro.profile === "teacher").length}</b>
+            <b>{registros.filter((registro) => registro.profile === "professor").length}</b>
           </span>
           <span>
             Total de profissionais:{" "}
-            <b>{registros.filter((registro) => registro.profile === "worker").length}</b>
+            <b>{registros.filter((registro) => registro.profile === "profissional").length}</b>
           </span>
           <span>
             Total de usuários gerais:{" "}
-            <b>{registros.filter((registro) => registro.profile === "general").length}</b>
+            <b>{registros.filter((registro) => registro.profile === "usuario geral").length}</b>
           </span>
           </div>
         <hr className="border-0.5 border-gray-300"></hr>
@@ -70,7 +70,7 @@ const Dashboard = () => {
             </thead>
             <tbody>
               {registros.map((registro) => (
-                <tr key={registro.id} className="text-center">
+                <tr key={registro.createdAt} className="text-center">
                   <td className="border border-gray-300">{registro.username}</td>
                   <td className="border border-gray-300">{registro.email}</td>
                   <td className="border border-gray-300">{registro.profile}</td>

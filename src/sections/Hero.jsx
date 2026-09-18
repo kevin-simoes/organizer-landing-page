@@ -5,8 +5,7 @@ import { ArrowRight, Mouse } from 'lucide-react'
 const Hero = () => {
     return (
         <>
-            <section className='flex px-16 pt-30 pb-10 flex-col-reverse items-center text-center md:flex-row md:text-left gap-10 max-w-9xl mx-auto' id='hero-section
-'>
+            <section className='flex px-16 pt-30 pb-10 flex-col-reverse items-center text-center md:flex-row md:text-left gap-10 max-w-9xl mx-auto' id='hero-section'>
                 <div className='flex flex-col gap-2 items-center md:items-start'>
                     <h1>Suas anotações <span className='text-(--primary-color)'>Organizadas</span> com um clique!</h1>
                     <p className='text-gray-500'>Capture fotos de lousas, folhas de caderno e anotações. Organizamos tudo automaticamente e encontra o
