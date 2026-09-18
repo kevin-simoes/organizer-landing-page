@@ -43,6 +43,7 @@ export default function Login() {
         // Exibe o erro enviado pelo backend
         setMessage(data.message);
       }
+      
     } catch (error) {
       console.error("Erro na requisição:", error);
       setMessage("Erro ao conectar com o servidor.");
@@ -80,8 +81,7 @@ export default function Login() {
         >
           <h3 className="text-xl font-bold">
             Bem vindo de volta ao 
-            <span className="text-(--primary-color)">
-               Organizer
+            <span className="text-(--primary-color)"> Organizer
             </span>
           </h3>
 
