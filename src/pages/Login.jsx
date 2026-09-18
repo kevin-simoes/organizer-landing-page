@@ -1,6 +1,7 @@
 import organizerIcon from "../assets/organizer_icon.png";
 import { Link, useNavigate } from "react-router-dom";
 import { useState } from "react";
+import { useAuth } from "../hooks/useAuth";
 
 export default function Login() {
   const [username, setUsername] = useState("");
@@ -8,6 +9,8 @@ export default function Login() {
   const [message, setMessage] = useState("");
 
   const navigate = useNavigate();
+  // Definindo a função de login do hook personalizado (useAuth)
+  const { login } = useAuth();
 
   // Função chamada quando o formulário de login for enviado
   const handleLogin = async (e) => {
@@ -31,16 +34,10 @@ export default function Login() {
       const data = await response.json();
 
       if (response.ok) {
-        // Salva o token no navegador
-        localStorage.setItem("token", data.token);
-
-        // Mensagem de sucesso
         setMessage("Login bem-sucedido!");
-
-        // Vai para o dashboard
-        navigate("/dashboard");
+        // Chama a função de login do hook personalizado, passando o token recebido da API
+        login(data.token);
       } else {
-        // Exibe o erro enviado pelo backend
         setMessage(data.message);
       }
       

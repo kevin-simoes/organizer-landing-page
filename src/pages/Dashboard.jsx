@@ -1,17 +1,10 @@
-import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 import { LucideSquareArrowRightExit } from "lucide-react";
+import { useAuth } from "../hooks/useAuth";
 
 const Dashboard = () => {
-  const navigate = useNavigate();
-
-  const handleLogout = () => {
-    // Remove o token salvo no navegador
-    localStorage.removeItem("token");
-
-    // Volta para a tela de login
-    navigate("/login");
-  };
+  // Definindo a função de logout do hook personalizado (useAuth)
+  const { logout } = useAuth();
 
   const [registros, setRegistros] = useState(() => {
     const salvarRegistro = localStorage.getItem("registrations");
@@ -27,7 +20,7 @@ const Dashboard = () => {
         <span className="flex justify-between">
           <h2>Dashboard</h2>
       <button
-          onClick={handleLogout} // chama a função de logout
+          onClick={logout} // chama a função de logout
           className=" bg-red-300  text-red-600 rounded-md w-fit h-fit p-2  hover:bg-red-400 hover:text-white cursor-pointer tex  transition-colors flex gap-2 items-center"
         >
           <LucideSquareArrowRightExit className="w-5 h-5"/>
