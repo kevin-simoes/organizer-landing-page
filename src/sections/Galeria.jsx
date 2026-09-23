@@ -9,10 +9,10 @@ const Galeria = () => {
           className="flex flex-col gap-2 py-10 items-center max-w-6xl mx-auto w-full text-center sm:text-left"
           id="gallery"
         >
-          <h2 className="text-3xl md:text-4xl font-bold">
+          <h2 className="text-3xl md:text-4xl font-bold dark:text-(--primary-color-dark)">
             Veja o <span className="text-(--primary-color)">Organizer</span> em ação
           </h2>
-          <p className="mt-3 text-base md:text-lg max-w-xl mx-auto">
+          <p className="mt-3 text-base md:text-lg max-w-xl mx-auto dark:text-(--secondary-color-dark)">
             Uma prévia visual da solução desenvolvida pela equipe.
           </p>
 

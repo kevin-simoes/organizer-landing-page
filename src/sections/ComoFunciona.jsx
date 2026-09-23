@@ -8,7 +8,7 @@ const ComoFunciona = () => {
           className="px-4 py-16 md:px-10 max-w-6xl mx-auto w-full text-center flex flex-col gap-10"
           id="tutorial"
         >
-          <h2 className="text-3xl md:text-4xl font-bold">
+          <h2 className="text-3xl md:text-4xl font-bold dark:text-(--primary-color-dark)">
             Como funciona o <span className="text-(--primary-color)">Organizer</span>
           </h2>
 
@@ -23,7 +23,7 @@ const ComoFunciona = () => {
               </p>
             </div>
 
-            <div className="rounded-2xl border border-(--card-border-color1) bg-(--card-color1) px-8 pt-8 flex gap-4 items-top text-end items:start md:flex-row flex-col-reverse items-center">
+            <div className="rounded-2xl border border-(--card-border-color1) bg-(--card-color1) dark:bg-(--card-color1-dark) dark:border-(--card-border-color1-dark) px-8 pt-8 flex gap-4 items-top text-end items:start md:flex-row flex-col-reverse items-center">
               <img
                 src={TutorialImage}
                 style={{height: '300px'}}
@@ -31,8 +31,8 @@ const ComoFunciona = () => {
               />
             <div className="flex flex-col gap-4 items-end text-end">
               <Folder className="text-(--primary-color)" width="35" height="35"/>
-                <h3 className="text-xl font-bold">Organização por temas</h3>
-                <p className="text-(--secondary-color)/80">
+                <h3 className="text-xl font-bold dark:text-(--primary-color-dark)">Organização por temas</h3>
+                <p className="text-(--secondary-color) dark:text-(--secondary-color-dark)">
                   Diferente da galeria de fotos, a do Organizer é voltada 100% a fotos voltadas a
                   estudo/trabalho, por conta disso o aplicativo separa as fotos por temas, sendo
                   ajustável para atender as necessidades do usuário.

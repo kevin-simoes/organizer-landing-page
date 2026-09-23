@@ -92,14 +92,14 @@ export default function RegistrarFormulario() {
           <h3 className="text-lg font-semibold text-white">Organizer</h3>
         </span>
         <span>
-        <Link to="/" className="text-white">Home</Link>
+        <Link to="/" className="text-white rounded-lg p-2 transition-colors hover:bg-(--background-color-dark)/10">Home</Link>
         </span>
       </header>
 
       <div className="flex flex-1 flex-col items-center justify-center bg-(--background-gradient)] p-4 md:p-8">
         <form
           onSubmit={handleSubmit}
-          className="flex w-full max-w-[40%] flex-col gap-4 bg-white p-8 rounded-2xl text-center shadow-[0_10px_25px_rgba(0,0,0,0.1)] max-lg:max-w-[60%] max-sm:max-w-full max-sm:p-6"
+          className="flex w-full max-w-[40%] flex-col gap-4 bg-white dark:bg-(--card-color1-dark) dark:border-(--card-border-color1-dark) dark:text-(--primary-color-dark) p-8 rounded-2xl text-center shadow-[0_10px_25px_rgba(0,0,0,0.1)] max-lg:max-w-[60%] max-sm:max-w-full max-sm:p-6"
         >
           <h3 className="text-xl font-bold">
             Seja bem vindo ao
@@ -115,10 +115,11 @@ export default function RegistrarFormulario() {
             type="text"
             id="username"
             name="username"
+            placeholder="João Silva"
             value={formulario.username}
             onChange={handleChange}
             required
-            className="w-full rounded-lg border border-(--card-border-color1) bg-white px-4 py-3 outline-none transition-colors focus:border-(--primary-color)"
+            className="w-full rounded-lg border border-(--card-border-color1) bg-white dark:bg-(--card-color1-dark) dark:border-(--card-border-color1-dark) px-4 py-3 outline-none transition-colors focus:border-(--primary-color)"
           />
 
           <label htmlFor="email" className="block text-left font-semibold">
@@ -128,10 +129,11 @@ export default function RegistrarFormulario() {
             type="email"
             id="email"
             name="email"
+            placeholder="joaosilva@gmail.com"
             value={formulario.email}
             onChange={handleChange}
             required
-            className="w-full rounded-lg border border-(--card-border-color1) bg-white px-4 py-3 outline-none transition-colors focus:border-(--primary-color)"
+            className="w-full rounded-lg border border-(--card-border-color1) bg-white dark:bg-(--card-color1-dark) dark:border-(--card-border-color1-dark) px-4 py-3 outline-none transition-colors focus:border-(--primary-color)"
           />
 
           <label htmlFor="profile" className="block text-left font-semibold">
@@ -143,7 +145,7 @@ export default function RegistrarFormulario() {
             value={formulario.profile}
             onChange={handleChange}
             required
-            className="w-full rounded-lg border border-(--card-border-color1) bg-white px-4 py-3 outline-none transition-colors focus:border-(--primary-color)"
+            className="w-full rounded-lg border border-(--card-border-color1) bg-white dark:bg-(--card-color1-dark) dark:border-(--card-border-color1-dark) px-4 py-3 outline-none transition-colors focus:border-(--primary-color)"
           >
             <option value="" disabled>
               Selecione
@@ -165,7 +167,7 @@ export default function RegistrarFormulario() {
             value={formulario.discovery}
             onChange={handleChange}
             required
-            className="w-full rounded-lg border border-(--card-border-color1) bg-white px-4 py-3 outline-none transition-colors focus:border-(--primary-color)"
+            className="w-full rounded-lg border border-(--card-border-color1) bg-white dark:bg-(--card-color1-dark) dark:border-(--card-border-color1-dark) px-4 py-3 outline-none transition-colors focus:border-(--primary-color)"
           />
 
           <label htmlFor="excited" className="block text-left font-semibold">
@@ -179,19 +181,19 @@ export default function RegistrarFormulario() {
             value={formulario.excited}
             onChange={handleChange}
             required
-            className="w-full rounded-lg border border-(--card-border-color1) bg-white px-4 py-3 outline-none transition-colors focus:border-(--primary-color)"
+            className="w-full rounded-lg border border-(--card-border-color1) bg-white dark:bg-(--card-color1-dark) dark:border-(--card-border-color1-dark) px-4 py-3 outline-none transition-colors focus:border-(--primary-color)"
           />
 
           <button
             type="submit"
-            className="rounded-lg bg-(--primary-color) p-4 text-white transition-opacity hover:opacity-90"
+            className="rounded-lg bg-(--primary-color) cursor-pointer p-4 text-white transition-opacity hover:opacity-90"
           >
             Enviar
           </button>
         </form>
       </div>
 
-      <footer className="p-4 text-center text-sm">
+      <footer className="p-4 text-center text-sm text-white">
         @2026 IRIS. Todos os direitos reservados.
       </footer>
     </div>

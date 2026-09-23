@@ -14,22 +14,22 @@ const App = () => {
   return (
     <>
       <NavBar />
-      <main className="flex flex-col gap-10 items-center p-2 font-primary">
+      <main className="flex flex-col gap-10 items-center p-2 font-primary bg-white text-black dark:bg-(--background-color-dark)">
         <Hero />
         <Sobre />
         <PublicoAlvo/>
         </main>
         <Beneficios/>
-        <main  className="flex flex-col gap-10 items-center p-2 font-primar">
+        <main  className="flex flex-col gap-10 items-center p-2 font-primary bg-white text-black dark:bg-(--background-color-dark)">
         <Galeria/>
         <ComoFunciona/>
         <Equipe/>
         </main>
         <Convite/>
-        <main  className="flex flex-col gap-10 items-center p-2 font-primary text-(--secondary-color)">
+        <main  className="flex flex-col gap-10 items-center p-2 font-primary text-(--secondary-color) dark:text-(--secondary-color-dark) dark:bg-(--card-color1-dark)">
         <Contato/>
       </main>
-      <footer className="py-6 text-center text-sm text-(--secondary-color)/60">
+      <footer className="py-6 text-center text-sm text-(--secondary-color) dark:text-(--secondary-color-dark) dark:bg-(--card-color1-dark)">
         <p>&copy; 2026 IRIS. Todos os direitos reservados.</p>
       </footer>
     </>

@@ -7,13 +7,13 @@ const Sobre = () => {
     return (
         <div>
             <section className='flex flex-col items-center gap-4 px-4 py-12 sm:py-16 text-center' id="about">
-                <h2 className='text-2xl sm:text-3xl md:text-4xl font-bold'>Continue estudando sem imprevistos.</h2>
-                <p className='text-sm sm:text-base text-(--secondary-color)/80'>Com Organizer, agentes customizados organizarão suas fotos.</p>
-                <div className='flex flex-col sm:flex-row w-full max-w-[880px] items-center bg-(--card-color1) pt-4 px-4 rounded-2xl border-(--card-border-color1) border-1 text-start'>
+                <h2 className='text-2xl sm:text-3xl md:text-4xl font-bold dark:text-(--primary-color-dark)'>Continue estudando sem imprevistos.</h2>
+                <p className='text-sm sm:text-base text-(--secondary-color) dark:text-(--secondary-color-dark)'>Com Organizer, agentes customizados organizarão suas fotos.</p>
+                <div className='flex flex-col sm:flex-row w-full max-w-[880px] items-center bg-(--card-color1) dark:bg-(--card-color1-dark) pt-4 px-4 rounded-2xl border-(--card-border-color1) dark:border-(--card-border-color1-dark) border-1 text-start'>
                     <div className="about-big-card-leftside flex flex-col gap-2 py-2 sm:py-4">
                         <BrainCircuit className='stroke-(--primary-color) w-8 h-8' />
-                        <h3 className='text-lg sm:text-xl font-bold'>Organização inteligente</h3>
-                        <p className='text-sm sm:text-base text-(--secondary-color)/80'>
+                        <h3 className='text-lg sm:text-xl font-bold dark:text-(--primary-color-dark)'>Organização inteligente</h3>
+                        <p className='text-sm sm:text-base text-(--secondary-color) dark:text-(--secondary-color-dark)'>
                             O aplicativo identifica e separa automaticamente fotos de caderno, lousa e documentos, deixando
                             tudo mais organizado e fácil de encontrar.
                         </p>
@@ -26,11 +26,11 @@ const Sobre = () => {
                 </div>
                 <div className='flex flex-col md:flex-row gap-4 w-full max-w-[880px]'>
 
-                    <div className='flex flex-col w-full bg-(--card-color1) p-4 rounded-2xl border-(--card-border-color1) border-1 text-start'>
+                    <div className='flex flex-col w-full bg-(--card-color1) p-4 rounded-2xl dark:bg-(--card-color1-dark) pt-4 px-4 border-(--card-border-color1) dark:border-(--card-border-color1-dark) border-1 text-start'>
                         <div>
                             <Rocket className='stroke-(--primary-color) w-8 h-8' />
-                            <h3 className='mt-2 text-lg sm:text-xl font-bold'>Proatividade nos estudos</h3>
-                            <p className='mt-1 text-sm sm:text-base text-(--secondary-color)/80'>Facilita encontrar conteúdos rapidamente</p>
+                            <h3 className='mt-2 text-lg sm:text-xl font-bold dark:text-(--primary-color-dark)'>Proatividade nos estudos</h3>
+                            <p className='mt-1 text-sm sm:text-base text-(--secondary-color) dark:text-(--secondary-color-dark)'>Facilita encontrar conteúdos rapidamente</p>
                         </div>
                         <img
                             src={Filter}
@@ -39,11 +39,11 @@ const Sobre = () => {
                         />
                     </div>
 
-                    <div className='flex flex-col sm:flex-row bg-(--card-color1) w-full justify-between pt-4 pl-4 pr-0 sm:pr-0 rounded-2xl border-(--card-border-color1) border-1 text-start'>
+                    <div className='flex flex-col sm:flex-row bg-(--card-color1) w-full justify-between pl-4 pr-0 sm:pr-0 rounded-2xl dark:bg-(--card-color1-dark) pt-4 px-4 border-(--card-border-color1) dark:border-(--card-border-color1-dark) border-1 text-start'>
                         <div className='w-full sm:w-40 flex flex-col justify-between gap-2 pb-4'>
                             <TextSearch className='stroke-(--primary-color) w-8 h-8' />
-                            <h3 className='text-lg sm:text-xl font-bold'>Melhor Qualidade e Acesso às Anotações</h3>
-                            <p className='text-sm sm:text-base text-(--secondary-color)/80'>Facilita encontrar conteúdos rapidamente</p>
+                            <h3 className='text-lg sm:text-xl font-bold dark:text-(--primary-color-dark)'>Melhor Qualidade e Acesso às Anotações</h3>
+                            <p className='text-sm sm:text-base text-(--secondary-color) dark:text-(--secondary-color-dark)'>Facilita encontrar conteúdos rapidamente</p>
                         </div>
                         <div className='w-full flex justify-center justify-end'>
                             <img

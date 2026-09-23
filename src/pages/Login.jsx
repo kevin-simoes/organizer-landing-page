@@ -63,7 +63,7 @@ export default function Login() {
         </span>
 
         <span>
-          <Link to="/" className="text-white">Home</Link>
+          <Link to="/" className="text-white rounded-lg p-2 transition-colors hover:bg-(--background-color-dark)/10">Home</Link>
         </span>
       </header>
 
@@ -72,7 +72,7 @@ export default function Login() {
 
         <form
           onSubmit={handleLogin}
-          className="flex w-full max-w-[40%] flex-col gap-4 rounded-2xl bg-white p-8 text-center shadow-[0_10px_25px_rgba(0,0,0,0.1)] max-lg:max-w-[60%] max-sm:max-w-full max-sm:p-6"
+          className="flex w-full max-w-[40%] flex-col gap-4 rounded-2xl bg-white dark:bg-(--card-color1-dark) dark:border-(--card-border-color1-dark) dark:text-white p-8 text-center shadow-[0_10px_25px_rgba(0,0,0,0.1)] max-lg:max-w-[60%] max-sm:max-w-full max-sm:p-6"
         >
           <h3 className="text-xl font-bold">
             Bem vindo de volta ao 
@@ -99,7 +99,7 @@ export default function Login() {
             placeholder="voce@exemplo.com"
             value={username}
             onChange={(e) => setUsername(e.target.value)}
-            className="w-full rounded-lg border border-(--card-border-color1) bg-white px-4 py-3 outline-none transition-colors focus:border-(--primary-color)"
+            className="w-full rounded-lg border border-(--card-border-color1) bg-white dark:bg-(--card-color1-dark) dark:border-(--card-border-color1-dark) px-4 py-3 outline-none transition-colors focus:border-(--primary-color)"
           />
 
           {/* Senha */}
@@ -117,13 +117,13 @@ export default function Login() {
             placeholder="••••••••"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
-            className="w-full rounded-lg border border-(--card-border-color1) bg-white px-4 py-3 outline-none transition-colors focus:border-(--primary-color)"
+            className="w-full rounded-lg border border-(--card-border-color1) bg-white dark:bg-(--card-color1-dark) dark:border-(--card-border-color1-dark) px-4 py-3 outline-none transition-colors focus:border-(--primary-color)"
           />
 
           {/* Botão */}
           <button
             type="submit"
-            className="rounded-lg bg-(--primary-color) p-4 text-white transition-opacity hover:opacity-90"
+            className="rounded-lg bg-(--primary-color) p-4 cursor-pointer text-white transition-opacity hover:opacity-90"
           >
             Entrar
           </button>

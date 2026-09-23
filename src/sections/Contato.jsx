@@ -29,7 +29,7 @@ const Contato = () => {
             </div>
           </div>
         </section>
-          <hr className="border-0.5 border-gray-300 w-9/12" />
+          <hr className="border-0.5 border-gray-300 w-9/12 dark:border-(--secondary-color-dark)" />
     </>
   )
 }

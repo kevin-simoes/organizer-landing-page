@@ -7,7 +7,7 @@ const Hero = () => {
         <>
             <section className='flex px-16 pt-30 pb-10 flex-col-reverse items-center text-center md:flex-row md:text-left gap-10 max-w-9xl mx-auto' id='hero-section'>
                 <div className='flex flex-col gap-2 items-center md:items-start'>
-                    <h1>Suas anotações <span className='text-(--primary-color)'>Organizadas</span> com um clique!</h1>
+                    <h1 className='text-black dark:text-(--primary-color-dark)'>Suas anotações <span className='text-(--primary-color)'>Organizadas</span> com um clique!</h1>
                     <p className='text-gray-500'>Capture fotos de lousas, folhas de caderno e anotações. Organizamos tudo automaticamente e encontra o
                         que você precisa em segundos.</p>
                     <a href="#about" className='flex border-1 border-(--primary-color) text-(--primary-color) w-fit p-2 rounded-full hover:bg-(--primary-color) hover:text-white transition-colors gap-2'>
