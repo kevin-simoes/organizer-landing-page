@@ -9,7 +9,11 @@ const NavBar = () => {
   const { darkMode, toggleTheme } = useTheme();
 
   return (
-    <header className="fixed w-full flex items-center justify-between px-6 py-4 text-black-800 dark:text-olive-300">
+    <header className="fixed z-2 w-full flex items-center justify-between px-6 py-4
+  bg-white/70 dark:bg-black/70
+  backdrop-blur-md
+  border-b border-black/5 dark:border-white/5
+  text-black dark:text-white">
       <div className="flex gap-2">
         <Link to="/" className="flex items-center gap-2">
           <img src={Icon} alt="Organizer" className="h-8 w-8" />
@@ -24,7 +28,7 @@ const NavBar = () => {
         </button>
       </div>
 
-      <nav className="hidden lg:flex items-center gap-2">
+      <nav className="hidden xl:flex items-center gap-2">
         <nav aria-label="Navegação principal" className="flex gap-3 flex-wrap">
           <a className="rounded-lg py-2 px-1 transition-colors hover:bg-(--background-color-dark)/10 dark:hover:bg-(--background-color)/10" href="#about">A Solução</a>
           <a className="rounded-lg py-2 px-1 transition-colors hover:bg-(--background-color-dark)/10 dark:hover:bg-(--background-color)/10" href="#target-audience">Público-Alvo</a>
@@ -41,14 +45,14 @@ const NavBar = () => {
 
       <button
         onClick={() => setMenuAberto(!menuAberto)}
-        className="text-2xl lg:hidden"
+        className="text-2xl xl:hidden"
         aria-label="Abrir menu"
       >
         <Menu />
       </button>
 
       {menuAberto && (
-        <nav className="absolute right-4 top-16 z-50 flex w-48 flex-col gap-4 rounded-lg bg-white p-4 shadow-lg lg:hidden">
+        <nav className="absolute right-4 top-16 z-50 flex w-48 flex-col gap-4 rounded-lg bg-white p-4 shadow-lg xl:hidden">
           <nav
             aria-label="Navegação principal"
             className="flex gap-10 flex-wrap"
