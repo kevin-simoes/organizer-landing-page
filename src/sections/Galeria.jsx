@@ -17,20 +17,20 @@ const Galeria = () => {
           </p>
 
           <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            <figure className="rounded-2xl overflow-hidden border border-(--card-border-color1) bg-(--card-color1)">
+            <figure className="rounded-2xl flex flex-col items-center overflow-hidden border border-(--card-border-color1) bg-(--card-color1)">
               <img src={Home}
                 className="w-full h-1 object-cover"
               />
               <figcaption className="py-3 text-sm font-medium">Tela inicial</figcaption>
             </figure>
-            <figure className="rounded-2xl overflow-hidden border border-(--card-border-color1) bg-(--card-color1)">
+            <figure className="rounded-2xl flex flex-col items-center overflow-hidden border border-(--card-border-color1) bg-(--card-color1)">
               <img
                 src={Folders}
                 className="w-full h-56 object-cover"
               />
               <figcaption className="py-3 text-sm font-medium">Organização automática</figcaption>
             </figure>
-            <figure className="rounded-2xl overflow-hidden border border-(--card-border-color1) bg-(--card-color1)">
+            <figure className="rounded-2xl flex flex-col items-center overflow-hidden border border-(--card-border-color1) bg-(--card-color1)">
               <img
                 src={Notes}
                 className="w-full h-56 object-cover"

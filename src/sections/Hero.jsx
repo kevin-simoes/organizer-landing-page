@@ -20,7 +20,7 @@ const Hero = () => {
                     className='w-100 md:w-200 ' />
                 </div>
             </section>
-            <span className="flex gap-2">
+            <span className="flex gap-2 dark:text-white">
                 <Mouse/><p>Role a tela</p>
             </span>
         </>

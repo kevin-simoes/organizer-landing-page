@@ -1,7 +1,8 @@
 import { useState, useEffect } from "react";
-import organizerIcon from "../assets/organizer_icon.png";
+import Icon from "../assets/organizer_icon.png";
 import { Link } from "react-router-dom";
-import { Check } from "lucide-react";
+import { Check, Moon, Sun } from "lucide-react";
+import { useTheme } from "../hooks/useTheme";
 
 export default function RegistrarFormulario() {
   const [registros, setRegistros] = useState(() => {
@@ -14,7 +15,8 @@ export default function RegistrarFormulario() {
   useEffect(() => {
     localStorage.setItem("registrations", JSON.stringify(registros));
   }, [registros]);
-
+  
+  
   const [formulario, setFormulario] = useState({
     username: "",
     email: "",
@@ -23,20 +25,20 @@ export default function RegistrarFormulario() {
     excited: "",
   });
   const [mostrarNotificacao, setMostrarNotificacao] = useState(false);
-
+  
   function handleChange(e) {
     let nome = e.target.name;
     let valor = e.target.value;
-
+    
     let novoFormulario = formulario;
     novoFormulario[nome] = valor;
-
+    
     setFormulario({ ...novoFormulario });
   }
-
+  
   function handleSubmit(e) {
     e.preventDefault();
-
+    
     // cria o novo registro e coloca a data que foi criado
     let dataDeAgora = new Date();
     let novoRegistro = {
@@ -47,7 +49,7 @@ export default function RegistrarFormulario() {
       excited: formulario.excited,
       createdAt: dataDeAgora.toISOString(),
     };
-
+    
     // adiciona o novo registro na lista
     setRegistros([...registros, novoRegistro]);
     
@@ -58,14 +60,16 @@ export default function RegistrarFormulario() {
       discovery: "",
       excited: "",
     });
-
+    
     setMostrarNotificacao(true);
-
+    
     setTimeout(function () {
       setMostrarNotificacao(false);
     }, 3000);
   }
 
+  const { darkMode, toggleTheme } = useTheme();
+  
   return (
     <div className="min-h-screen flex flex-col bg-[linear-gradient(47deg,_rgba(35,47,75,1)_0%,_rgb(38,103,255)_100%)]">
       <div
@@ -88,8 +92,19 @@ export default function RegistrarFormulario() {
 
       <header className="flex items-center justify-between px-6 py-4">
         <span className="flex items-center gap-2">
-          <img src={organizerIcon} alt="Organizer Icon" className="h-8 w-8" />
-          <h3 className="text-lg font-semibold text-white">Organizer</h3>
+        <div className="flex gap-2">
+        <Link to="/" className="flex items-center gap-2">
+          <img src={Icon} alt="Organizer" className="h-8 w-8" />
+          <h3 className="font-semibold">Organizer</h3>
+        </Link>
+        <button
+          onClick={toggleTheme}
+          className="rounded-lg p-2 transition-colors cursor-pointer hover:bg-(--background-color-dark)/10 dark:hover:bg-(--background-color)/10"
+          aria-label="Alternar modo escuro"
+        >
+          {darkMode ? <Sun /> : <Moon />}
+        </button>
+      </div>
         </span>
         <span>
         <Link to="/" className="text-white rounded-lg p-2 transition-colors hover:bg-(--background-color-dark)/10">Home</Link>

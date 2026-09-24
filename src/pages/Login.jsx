@@ -1,12 +1,15 @@
-import organizerIcon from "../assets/organizer_icon.png";
+import Icon from "../assets/organizer_icon.png";
 import { Link,  } from "react-router-dom";
 import { useState } from "react";
+import { Sun, Moon } from "lucide-react";
 import { useAuth } from "../hooks/useAuth";
+import { useTheme } from "../hooks/useTheme";
 
 export default function Login() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [message, setMessage] = useState("");
+  const { darkMode, toggleTheme } = useTheme();
   // Definindo a função de login do hook personalizado (useAuth)
   const { login } = useAuth();
 
@@ -51,15 +54,19 @@ export default function Login() {
       {/* Header */}
       <header className="flex items-center justify-between px-6 py-4">
         <span className="flex items-center gap-2">
-          <img
-            src={organizerIcon}
-            alt="Organizer Icon"
-            className="h-8 w-8"
-          />
-
-          <h3 className="text-lg font-semibold text-white">
-            Organizer
-          </h3>
+        <div className="flex gap-2">
+        <Link to="/" className="flex items-center gap-2">
+          <img src={Icon} alt="Organizer" className="h-8 w-8" />
+          <h3 className="font-semibold">Organizer</h3>
+        </Link>
+        <button
+          onClick={toggleTheme}
+          className="rounded-lg p-2 transition-colors cursor-pointer hover:bg-(--background-color-dark)/10 dark:hover:bg-(--background-color)/10"
+          aria-label="Alternar modo escuro"
+        >
+          {darkMode ? <Sun /> : <Moon />}
+        </button>
+      </div>
         </span>
 
         <span>
