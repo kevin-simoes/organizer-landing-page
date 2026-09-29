@@ -1,7 +1,8 @@
 import { useState } from "react";
-import { LucideSquareArrowRightExit, Sun, Moon } from "lucide-react";
+import { LogOut, Sun, Moon } from "lucide-react";
 import { useAuth } from "../hooks/useAuth";
 import { useTheme } from "../hooks/useTheme";
+import { Link } from "react-router-dom";
 
 const Dashboard = () => {
   // Definindo a função de logout do hook personalizado (useAuth)
@@ -30,13 +31,16 @@ const Dashboard = () => {
             {darkMode ? <Sun /> : <Moon />}
                     </button>
           </span>
-      <button
-          onClick={logout} // chama a função de logout
-          className=" bg-red-300  text-red-600 rounded-md w-fit h-fit p-2  hover:bg-red-400 hover:text-white cursor-pointer tex  transition-colors flex gap-2 items-center"
-        >
-          <LucideSquareArrowRightExit className="w-5 h-5"/>
-          Sair
-        </button>
+      <span className="flex gap-4">
+      <Link to="/" className="dark:text-white text-black rounded-lg p-2 transition-colors hover:bg-(--background-color-dark)/10">Home</Link>
+        <button
+            onClick={logout} // chama a função de logout
+            className="text-red-600 transition-colors hover:bg-red-100 dark:hover:bg-red-500/10 p-2 rounded-xl cursor-pointer tex  transition-colors flex gap-2 items-center"
+          >
+            <LogOut className="h-4 w-4" />
+            Sair
+          </button>
+      </span>
         </span>
         <hr className="border-0.5 border-gray-300 dark:border-gray-600"></hr>
         <div className="flex gap-2 overflow-auto">

@@ -1,16 +1,21 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import Icon from "../assets/organizer_icon.png";
-import { Menu, Sun, Moon } from "lucide-react";
+import { Menu, Sun, Moon, User } from "lucide-react";
 import { useTheme } from "../hooks/useTheme";
+import { useAuth } from "../hooks/useAuth";
+import UserMenu from "../components/UserMenu";
+import SectionsMenu from "../components/SectionsMenu";
+import { motion, AnimatePresence } from "framer-motion";
 
 const NavBar = () => {
   const [menuAberto, setMenuAberto] = useState(false);
   const { darkMode, toggleTheme } = useTheme();
+  const { isAuthenticated } = useAuth();
 
   return (
-    <header className="fixed z-2 w-full flex items-center justify-between px-6 py-4
-  bg-white/70 dark:bg-black/70
+    <header className="fixed z-11 w-full flex items-center justify-between px-20 py-2
+  bg-white/20 dark:bg-black/20
   backdrop-blur-md
   border-b border-black/5 dark:border-white/5
   text-black dark:text-white">
@@ -28,52 +33,81 @@ const NavBar = () => {
         </button>
       </div>
 
-      <nav className="hidden xl:flex items-center gap-2">
-        <nav aria-label="Navegação principal" className="flex gap-3 flex-wrap">
-          <a className="rounded-lg py-2 px-1 transition-colors hover:bg-(--background-color-dark)/10 dark:hover:bg-(--background-color)/10" href="#about">A Solução</a>
-          <a className="rounded-lg py-2 px-1 transition-colors hover:bg-(--background-color-dark)/10 dark:hover:bg-(--background-color)/10" href="#target-audience">Público-Alvo</a>
-          <a className="rounded-lg py-2 px-1 transition-colors hover:bg-(--background-color-dark)/10 dark:hover:bg-(--background-color)/10" href="#benefits">Benefícios</a>
-          <a className="rounded-lg py-2 px-1 transition-colors hover:bg-(--background-color-dark)/10 dark:hover:bg-(--background-color)/10" href="#gallery">Galeria</a>
-          <a className="rounded-lg py-2 px-1 transition-colors hover:bg-(--background-color-dark)/10 dark:hover:bg-(--background-color)/10" href="#tutorial">Como funciona</a>
-          <a className="rounded-lg py-2 px-1 transition-colors hover:bg-(--background-color-dark)/10 dark:hover:bg-(--background-color)/10" href="#team">Nossa Equipe</a>
-          <a className="rounded-lg py-2 px-1 transition-colors hover:bg-(--background-color-dark)/10 dark:hover:bg-(--background-color)/10" href="#contact">Contato</a>
-        <Link to="/formulario" className="rounded-lg py-2 px-1 transition-colors hover:bg-(--background-color-dark)/10 dark:hover:bg-(--background-color)/10">Formulário</Link>
-
-        <Link to="/login" className="rounded-lg py-2 px-1 transition-colors hover:bg-(--background-color-dark)/10 dark:hover:bg-(--background-color)/10">Login</Link>
-      </nav>
+      <nav className="hidden lg:flex items-center gap-2">
+          <SectionsMenu/>
+        <Link to="/formulario" className="rounded-lg py-1 px-1 flex items-center transition-colors hover:bg-(--background-color-dark)/10 dark:hover:bg-(--background-color)/10">Formulário</Link>
         </nav>
+        <div className="hidden lg:flex items-center gap-2">
+          {!isAuthenticated() && <Link to="/login">
+            <motion.a
+              href="#about"
+              initial="rest"
+              whileHover="hover"
+              animate="rest"
+              className="relative flex items-center overflow-hidden bg-white text-black w-fit py-1.5 px-2 rounded-full gap-2"
+            >
+              <motion.span
+                variants={{
+                  rest: { scaleX: 0 },
+                  hover: { scaleX: 1 },
+                }}
+                transition={{ duration: 0.4, ease: [0.65, 0, 0.35, 1] }}
+                style={{ originX: 1 }}
+                className="absolute inset-0 bg-(--primary-color)"
+              />
+              <motion.span
+                variants={{
+                  rest: { color: "#000000" },
+                  hover: { color: "#ffffff" },
+                }}
+                transition={{ duration: 0.3 }}
+                className="relative z-10 flex items-center gap-2"
+              >
+                <User/>
+                Entrar
+              </motion.span>
+            </motion.a>
+          </Link>}
+          {isAuthenticated() && <UserMenu />}
+        </div>
 
       <button
         onClick={() => setMenuAberto(!menuAberto)}
-        className="text-2xl xl:hidden"
+        className="text-2xl lg:hidden rounded-lg p-1 transition-colors hover:bg-(--background-color-dark)/10 dark:hover:bg-(--background-color)/10"
         aria-label="Abrir menu"
       >
         <Menu />
       </button>
 
+      <AnimatePresence>
       {menuAberto && (
-        <nav className="absolute right-4 top-16 z-50 flex w-48 flex-col gap-4 rounded-lg bg-white p-4 shadow-lg xl:hidden">
+        <motion.nav
+            initial={{ opacity: 0, y: -8, scale: 0.95 }}
+            animate={{ opacity: 1, y: 0, scale: 1 }}
+            exit={{ opacity: 0, y: -8, scale: 0.95 }}
+            transition={{ duration: 0.15, ease: "easeOut" }} className="absolute right-4 top-16 z-50 flex w-fit flex-col gap-2 rounded-xl border border-(--card-border-color1) bg-white p-2 shadow-lg lg:hidden dark:bg-(--background-color-dark) dark:border dark:border-(--card-border-color1-dark)">
           <nav
             aria-label="Navegação principal"
-            className="flex gap-10 flex-wrap"
+            className="flex gap-2 flex-col"
           >
-            <a href="#about">A Solução</a>
-            <a href="#target-audience">Público-Alvo</a>
-            <a href="#benefits">Benefícios</a>
-            <a href="#gallery">Galeria</a>
-            <a href="#tutorial">Como funciona</a>
-            <a href="#team">Nossa Equipe</a>
-            <a href="#contact">Contato</a>
+          {isAuthenticated() && <span className="flex gap-2 items-center">
+            <UserMenu /><p>Adm do Organizer</p>
+          </span>}
+            <a href="#about" className="rounded-lg p-2 transition-colors hover:bg-(--background-color-dark)/10 w-full dark:hover:bg-(--background-color)/10">A Solução</a>
+            <a href="#target-audience" className="rounded-lg p-2 transition-colors hover:bg-(--background-color-dark)/10 w-full dark:hover:bg-(--background-color)/10">Público-Alvo</a>
+            <a href="#benefits" className="rounded-lg p-2 transition-colors hover:bg-(--background-color-dark)/10 w-full dark:hover:bg-(--background-color)/10">Benefícios</a>
+            <a href="#gallery" className="rounded-lg p-2 transition-colors hover:bg-(--background-color-dark)/10 w-full dark:hover:bg-(--background-color)/10">Galeria</a>
+            <a href="#tutorial" className="rounded-lg p-2 transition-colors hover:bg-(--background-color-dark)/10 w-full dark:hover:bg-(--background-color)/10">Como funciona</a>
+            <a href="#team" className="rounded-lg p-2 transition-colors hover:bg-(--background-color-dark)/10 w-full dark:hover:bg-(--background-color)/10">Nossa Equipe</a>
+            <a href="#contact" className="rounded-lg p-2 transition-colors hover:bg-(--background-color-dark)/10 w-full dark:hover:bg-(--background-color)/10">Contato</a>
           </nav>
-          <Link to="/formulario" onClick={() => setMenuAberto(false)}>
+          <Link to="/formulario" className="rounded-lg p-2 transition-colors hover:bg-(--background-color-dark)/10 w-full dark:hover:bg-(--background-color)/10" onClick={() => setMenuAberto(false)}>
             Formulário
           </Link>
-
-          <Link to="/login" onClick={() => setMenuAberto(false)}>
-            Login
-          </Link>
-        </nav>
+          {!isAuthenticated() && <Link className="rounded-lg p-2 transition-colors hover:bg-(--background-color-dark)/10 w-full dark:hover:bg-(--background-color)/10" to="/login">Login</Link>}
+        </motion.nav>
       )}
+            </AnimatePresence>
     </header>
   );
 };

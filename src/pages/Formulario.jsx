@@ -3,8 +3,12 @@ import Icon from "../assets/organizer_icon.png";
 import { Link } from "react-router-dom";
 import { Check, Moon, Sun } from "lucide-react";
 import { useTheme } from "../hooks/useTheme";
+import UserMenu from "../components/UserMenu";
+import { useAuth } from "../hooks/useAuth";
+
 
 export default function RegistrarFormulario() {
+  const { isAuthenticated } = useAuth();
   const [registros, setRegistros] = useState(() => {
     // Carregar registros do localStorage
     const salvarRegistro = localStorage.getItem("registrations");
@@ -90,7 +94,7 @@ export default function RegistrarFormulario() {
         </div>
       </div>
 
-      <header className="flex items-center justify-between px-6 py-4">
+      <header className="flex items-center justify-between px-4 py-2">
         <span className="flex items-center gap-2">
         <div className="flex gap-2">
         <Link to="/" className="flex items-center gap-2">
@@ -106,8 +110,10 @@ export default function RegistrarFormulario() {
         </button>
       </div>
         </span>
-        <span>
+        <span className="flex gap-4">
         <Link to="/" className="text-white rounded-lg p-2 transition-colors hover:bg-(--background-color-dark)/10">Home</Link>
+        {!isAuthenticated() && <Link className="rounded-lg py-2 px-1 transition-colors hover:bg-(--background-color-dark)/10 dark:hover:bg-(--background-color)/10" to="/login">Login</Link>}
+        {isAuthenticated() && <UserMenu />}
         </span>
       </header>
 

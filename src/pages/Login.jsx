@@ -52,7 +52,7 @@ export default function Login() {
     <div className="min-h-screen flex flex-col bg-[linear-gradient(47deg,_rgba(35,47,75,1)_0%,_rgb(38,103,255)_100%)]">
 
       {/* Header */}
-      <header className="flex items-center justify-between px-6 py-4">
+      <header className="flex items-center justify-between px-4 py-2">
         <span className="flex items-center gap-2">
         <div className="flex gap-2">
         <Link to="/" className="flex items-center gap-2">
