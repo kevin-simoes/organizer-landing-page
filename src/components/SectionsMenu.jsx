@@ -3,7 +3,6 @@ import { motion, AnimatePresence } from "framer-motion";
 import {
   ChevronDown,
   Lightbulb,
-  Users,
   Star,
   Image,
   Play,

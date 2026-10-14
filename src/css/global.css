@@ -60,7 +60,6 @@ tr {
 a {
     font-family: var(--font-secondary);
     font-size: 1rem;
-    font-weight: 500;
     text-decoration: none;
 }
 
