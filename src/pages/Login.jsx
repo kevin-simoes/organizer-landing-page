@@ -20,7 +20,7 @@ export default function Login() {
 
     try {
       // Faz a requisição para a API de login
-      const response = await fetch("http://localhost:3001/login", {
+      const response = await fetch("/api/login", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
