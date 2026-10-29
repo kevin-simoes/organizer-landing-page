@@ -23,7 +23,7 @@ const Hero = () => {
               <span className="text-(--primary-color)">Organizadas</span> com um
               clique!
             </h1>
-            <hr className="border-0.5 border-gray-600 w-full" />
+            <hr className="border-0.5 border-gray-600 w-180" />
             <p className="text-gray-500">
               Capture fotos de lousas, folhas de caderno e anotações.
               Organizamos tudo automaticamente e encontra o que você precisa em
