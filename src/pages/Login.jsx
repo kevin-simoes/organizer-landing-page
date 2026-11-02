@@ -91,19 +91,19 @@ export default function Login() {
             Faça login para continuar organizando seu dia a dia.
           </p>
 
-          {/* Email */}
+          {/* Usuário */}
           <label
-            htmlFor="email"
+            htmlFor="text"
             className="block text-left font-semibold"
           >
-            Seu email:
+            Usuário:
           </label>
 
           <input
             type="text"
-            id="email"
-            name="email"
-            placeholder="voce@exemplo.com"
+            id="username"
+            name="text"
+            placeholder="Gustavo"
             value={username}
             onChange={(e) => setUsername(e.target.value)}
             className="w-full rounded-lg border border-(--card-border-color1) bg-white dark:bg-(--card-color1-dark) dark:border-(--card-border-color1-dark) px-4 py-3 outline-none transition-colors focus:border-(--primary-color)"
