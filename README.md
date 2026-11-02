@@ -1,7 +1,7 @@
 <div align="center">
     <h1>
         <picture>
-        <img src="./src/assets/organizer_icon.png" alt="Logo do Organizer">
+        <img src="./organizer-landing-page/src/assets/organizer_icon.png" alt="Logo do Organizer">
         </picture><br>
         Organizer LandingPage
     </h1>
@@ -55,33 +55,30 @@ A aplicação possui páginas públicas, login com **JWT** consumindo uma **API 
 ## 🏗️ Estrutura do Projeto
 
 ```bash
-organizer-landing-page/
-├── api/
-│   └── login.js            <-- Serverless Function (usada na Vercel)
-│
-├── backend/
-│   ├── auth.js             <-- Lógica de login compartilhada (valida usuário e gera o JWT)
-│   ├── server.js           <-- Servidor Express (usado só no ambiente local)
-│   └── package.json
-│
-├── public/
-│
-├── src/
-│   ├── assets/
-│   ├── components/         <-- NavBar, PrivateRoute, UserMenu, etc.
-│   ├── hooks/
-│   │   ├── useAuth.js      <-- Custom Hook de autenticação
-│   │   └── useTheme.js     <-- Custom Hook de tema claro/escuro
-│   ├── pages/              <-- Home, Formulario, Login, Dashboard
-│   ├── sections/           <-- Seções da Landing Page
-│   ├── App.jsx
-│   └── main.jsx
-│
-├── vercel.json             <-- Rewrites do SPA (rotas do React Router)
-├── vite.config.js          <-- Inclui o proxy de /api/login para o ambiente local
-├── package.json
+SPRINT4/
 ├── README.md
-└── INTEGRANTES.TXT         <-- Nomes completos e RMs dos integrantes
+├── INTEGRANTES.TXT         <-- Nomes completos e RMs dos integrantes
+│
+└── organizer-landing-page/ <-- pasta do projeto (frontend + API)
+    ├── api/
+    │   └── login.js        <-- Serverless Function (usada na Vercel)
+    ├── backend/
+    │   ├── server.js       <-- Servidor Express (usado só no ambiente local)
+    │   └── package.json
+    ├── public/
+    ├── src/
+    │   ├── assets/
+    │   ├── components/     <-- NavBar, PrivateRoute, UserMenu, etc.
+    │   ├── hooks/
+    │   │   ├── useAuth.js  <-- Custom Hook de autenticação
+    │   │   └── useTheme.js <-- Custom Hook de tema claro/escuro
+    │   ├── pages/          <-- Home, Formulario, Login, Dashboard
+    │   ├── sections/       <-- Seções da Landing Page
+    │   ├── App.jsx
+    │   └── main.jsx
+    ├── vercel.json         <-- Rewrites do SPA (rotas do React Router)
+    ├── vite.config.js      <-- Proxy de /api/login para o ambiente local
+    └── package.json
 ```
 
 ## 🧭 Rotas
@@ -120,7 +117,7 @@ O projeto consome uma **API própria** de autenticação, com o endpoint `POST /
 | **Produção (Vercel)** | Serverless Function em `api/login.js` | Usa a variável de ambiente `JWT_SECRET` |
 | **Local** | Servidor Express em `backend/server.js` (porta `3001`) | O Vite redireciona `/api/login` para o Express por meio de um proxy configurado no `vite.config.js` |
 
-A lógica de autenticação (validar usuário e gerar o JWT) fica em `backend/auth.js` e é reaproveitada pelos dois ambientes.
+Os dois ambientes aplicam a mesma regra: validar usuário e senha e gerar um JWT com validade de 1 hora.
 
 O frontend envia:
 
